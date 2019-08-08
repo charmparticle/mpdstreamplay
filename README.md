@@ -10,7 +10,7 @@ Features:
   * Display album art
   * Display song info
   * Works locally, on a LAN, or over an ssh connection
-  * able to toggle full-screen display. Simply touch the album art to toggle full-screen status.
+  * Able to toggle full-screen display. Simply touch the album art to toggle full-screen status.
 
 Get started:
 
