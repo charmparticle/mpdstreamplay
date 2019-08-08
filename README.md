@@ -1,8 +1,8 @@
 Introducing a way to play your mpd music from just about anywhere.
 
-[mobile firefox screenshot](screenshot-mobileff.png)
+[mobile firefox screenshot](screenshot-mobileff.png "mobile screenshot on firefox")
 
-[mobile chrome screenshot](screenshot-mobilechrome.png)
+[mobile chrome screenshot](screenshot-mobilechrome.png "mobile screenshot on chrome")
 
 Features:
 
