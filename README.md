@@ -28,33 +28,33 @@ Get started:
         }
 
   * if you had to change your mpd.conf, you'll also need to restart mpd. If your config is /etc/mpd.conf, use:
-      sudo systemctl restart mpd.service
+        sudo systemctl restart mpd.service
 
   * get my mpd_what script, and set it to run periodically - you can do this with conky, or you can run it periodicaly with a shell script, like this, using Ctrl+C to quit it later:
 
-    #!/bin/bash
-    while true; do
-      ~/bin/mpd_what -q >/dev/null 2>&1 &
-      sleep 5
-    done
+        #!/bin/bash
+        while true; do
+          ~/bin/mpd_what -q >/dev/null 2>&1 &
+          sleep 5
+        done
 
   * Now, add a symbolic link to your `last` to your coverart dir. If your coverart dir is ~/Pictures/coverart, then you'd do this:
 
-      ln -s ~/.config/mpd_what/last ~/Pictures/coverart/last
+        ln -s ~/.config/mpd_what/last ~/Pictures/coverart/last
 
   * Now, copy play.htm to your coverart dir:
 
-      cp play.htm ~/Pictures/coverart
+        cp play.htm ~/Pictures/coverart
 
   * Now, if your coverart dir doesn't already serve http, here's how you can make it do that:
 
-      cd ~/Pictures/coverart && python3 http.server 8888
+        cd ~/Pictures/coverart && python3 http.server 8888
 
   * The above command serves HTTP on TCP port 8888 on your computer. Now, get your ip address:
 
-      ip addr | grep 'inet ' | grep -v 127.0.0.1 | awk '{print $2}' | sed 's#/.*##'
+        ip addr | grep 'inet ' | grep -v 127.0.0.1 | awk '{print $2}' | sed 's#/.*##'
 
   * Now point your phone or tablet to this html file. If the ip address you got in the last step was 192.168.1.101, and you are using python to serve http on port 8888, you'd use this url:
 
-      http://192.168,101:8888/play.htm
+        http://192.168,101:8888/play.htm
     
