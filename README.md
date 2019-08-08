@@ -16,7 +16,7 @@ Get started:
 
   * make sure http output is enabled in your mpd conf. The system default for most debian-based distros is for mpd to run as the system folder, so if you haven't configured your mpd, it's probably in /etc/mpd.conf. Here's what you want to add: 
 
-    audio_output {
+    `audio_output {
     	type		"httpd"
     	name		"mpd radio"
     	encoder		"lame"		# optional, vorbis or lame
@@ -25,7 +25,7 @@ Get started:
     	bitrate		"128"			# do not define if quality is defined
     	format		"44100:16:1"
     	max_clients     "0"                     # optional 0=no limit
-    }
+    }`
 
   * if you had to change your mpd.conf, you'll also need to restart mpd. If your config is /etc/mpd.conf, use:
       sudo systemctl restart mpd.service
