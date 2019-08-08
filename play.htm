@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MPD player</title>
+  </head>
+  <body>
+    <style>
+     body {
+       background-color: black;
+     }
+     audio {
+       width: 100%; 
+     }
+     img {
+       image-rendering: high-quality;
+       position: center;
+       width: 100%; 
+       height: auto;
+     }
+     h1 {
+       white-space: pre-wrap;
+       background-image: linear-gradient(to bottom, #cbddf2, #fcebd7);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       font-weight:bold;
+     }
+    </style>
+    <script type="text/javascript">
+      streamPort = "8000";
+      infoTxt = "";
+      infoUrl = "";
+      imgUrl = "";
+      function dirname(path) {
+        return path.match(/.*\//);
+      }
+      function setUrls() {
+        loc = window.location;
+        host = loc.hostname;
+        port = loc.port;
+        path = dirname(loc.pathname);
+        streamUrl = "http://" + host + ":" + streamPort;
+        if (port != ""){
+          imgUrl = "http://" + host + ":" + port + path + 'cover.jpg';
+          infoUrl = "http://" + host + ":" + port + path + 'last';
+        }
+        else {
+          imgUrl = "http://" + host + path + 'cover.jpg';
+          infoUrl = "http://" + host + path + 'last';
+        }
+        audio = document.createElement('audio');
+        audio.controls = true;
+        audio.type = 'audio/mp3';
+        audio.preload = 'auto';
+        audio.baseURI = streamUrl;
+        audio.src = streamUrl;
+        var i = document.getElementById("info");
+        i.appendChild(audio);
+      }
+
+      function toggleFullScreen() {
+        var i = document.getElementById("info");
+
+        var requestFullScreen = i.requestFullscreen || i.mozRequestFullScreen || i.webkitRequestFullScreen || i.msRequestFullscreen;
+        var cancelFullScreen = document.exitFullscreen || document.mozCancelFullScreen || document.webkitExitFullscreen || document.msExitFullscreen;
+
+        if(!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+          requestFullScreen.call(i);
+        }
+        else {
+          cancelFullScreen.call(document);
+        }
+      }
+      function refresh(){
+        setUrls();
+        document.addEventListener("click", toggleFullScreen); 
+        setInterval("updateInfo();",5000);
+      }
+      function updateSongInfo() {
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+          if (request.readyState === 4 && request.status == 200) {
+            infoTxt = request.responseText;
+            document.getElementById('songinfo').innerHTML = infoTxt;
+          }
+        }
+        request.open("GET", infoUrl, true);
+        request.send();
+      }
+      function updateInfo() {
+        epoch = Date.now();
+        document.getElementById('coverart').src = imgUrl + "?time=" + epoch;
+        updateSongInfo();
+      }
+      window.onload = refresh;
+    </script>
+    <div id="info">
+      <img src="cover.jpg" id="coverart"></img>
+      <h1 id="songinfo"></h1>
+    </div>
+  </body>
+</html>
