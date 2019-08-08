@@ -2,8 +2,6 @@ Introducing a way to play your mpd music from just about anywhere.
 
 ![mobile firefox screenshot](screenshot-mobileff.png "mobile screenshot on firefox")
 
-![mobile chrome screenshot](screenshot-mobilechrome.png "mobile screenshot on chrome")
-
 Features:
 
   * Stream music from mpd http output to any device which supports html5
