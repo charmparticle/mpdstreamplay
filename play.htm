@@ -39,13 +39,13 @@
         port = loc.port;
         path = dirname(loc.pathname);
         streamUrl = "http://" + host + ":" + streamPort;
-        if (port != ""){
-          imgUrl = "http://" + host + ":" + port + path + 'cover.jpg';
-          infoUrl = "http://" + host + ":" + port + path + 'last';
-        }
-        else {
+        if (port == ""){
           imgUrl = "http://" + host + path + 'cover.jpg';
           infoUrl = "http://" + host + path + 'last';
+        }
+        else {
+          imgUrl = "http://" + host + ":" + port + path + 'cover.jpg';
+          infoUrl = "http://" + host + ":" + port + path + 'last';
         }
         audio = document.createElement('audio');
         audio.controls = true;
