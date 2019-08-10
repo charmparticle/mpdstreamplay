@@ -28,7 +28,7 @@ Get started:
   * if you had to change your mpd.conf, you'll also need to restart mpd. If your config is /etc/mpd.conf, use:
         sudo systemctl restart mpd.service
 
-  * get [my mpd_what script](https://charmparticle/mpd_what), and set it to run periodically - you can do this with conky, or you can run it periodicaly with a shell script, like this, using Ctrl+C to quit it later:
+  * get [my mpd_what script](https://github.com/charmparticle/mpd_what), and set it to run periodically - you can do this with conky, or you can run it periodicaly with a shell script, like this, using Ctrl+C to quit it later:
 
         #!/bin/bash
         while true; do
