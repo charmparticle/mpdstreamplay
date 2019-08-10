@@ -47,7 +47,7 @@ Get started:
 
   * Now, if your coverart dir doesn't already serve http, here's how you can make it do that:
 
-        cd ~/Pictures/coverart && python3 http.server 8888
+        cd ~/Pictures/coverart && python3 -m http.server 8888
 
   * The above command serves HTTP on TCP port 8888 on your computer. Now, get your ip address:
 
