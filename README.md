@@ -25,6 +25,8 @@ Get started:
         	max_clients     "0"                     # optional 0=no limit
         }
 
+  * note the "port 8000" in that snippet. This is the port to stream music from. You are welcome to use a different port - you'll just have to use a url variable, which I'll demonstrate at the bottom.
+
   * if you had to change your mpd.conf, you'll also need to restart mpd. If your config is /etc/mpd.conf, use:
 
         sudo systemctl restart mpd.service
@@ -55,5 +57,15 @@ Get started:
 
   * Now point your phone or tablet to this html file. If the ip address you got in the last step was 192.168.1.101, and you are using python to serve http on port 8888, you'd use this url:
 
-        http://192.168,101:8888/play.htm
+        http://192.168.1.101:8888/play.htm
+
+  * If your http streaming port is something other than 8000, for example, if it's 8001, you would change the 'sp' url variable, so your url would look like this instead:
+
+        http://192.168.1.101:8888/play.htm?sp=8001
+
+  * To play over ssh, install an ssh app and forward your http port and your http streaming port to localhost. If you decide to forward your http streaming to a port other than 8000, your url would look like this:
+
+        http://localhost:8888/play.htm?sp=8001
+
+That's it! Enjoy.
     

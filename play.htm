@@ -34,6 +34,10 @@
         return path.match(/.*\//);
       }
       function setUrls() {
+        params = new URLSearchParams(document.location.search.substring(1));
+        if (params.get("sp") != null){
+          streamPort = params.get("sp");
+        }
         loc = window.location;
         host = loc.hostname;
         port = loc.port;
