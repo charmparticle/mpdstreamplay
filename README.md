@@ -70,6 +70,8 @@ Getting started:
   * To play over ssh, install an ssh app and forward your http port and your http streaming port to localhost. If you decide to forward your http port to 8888 and your http streaming to port 8001, your url would look like this:
 
         http://localhost:8888/play.htm?sp=8001
+        
+All that's left to do is play music on your mpd server. There are lots of apps to do that.
 
 That's it! Enjoy.
     
