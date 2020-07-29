@@ -24,6 +24,9 @@
        -webkit-text-fill-color: transparent;
        font-weight:bold;
      }
+     a {
+         text-decoration: none;
+     }
     </style>
     <script type="text/javascript">
       streamPort = "8000";
@@ -85,7 +88,7 @@
           if (request.readyState === 4 && request.status == 200) {
             infoTxt = request.responseText;
             document.getElementById('songinfo').innerHTML = infoTxt;
-            document.getElementById('songinfo').attributes.itemprop.value = t;
+            document.getElementById('fresh').href = '#?' + 'epoch=' + t;
           }
         }
         request.open("GET", infoUrl, true);
@@ -100,7 +103,7 @@
     </script>
     <div id="info">
       <img src="cover.jpg" id="coverart"></img>
-      <h1 id="songinfo" itemprop="0"></h1>
+      <a id="fresh" href="#"><h1 id="songinfo" itemprop="0"></h1></a>
     </div>
   </body>
 </html>
