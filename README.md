@@ -10,9 +10,9 @@ Features:
   * Works locally, on a LAN, or over an ssh connection
   * Able to toggle full-screen display. Simply touch the album art to toggle full-screen status.
 
-Get started:
+Getting started:
 
-  * make sure http output is enabled in your mpd conf. The system default for most debian-based distros is for mpd to run as the system folder, so if you haven't configured your mpd, it's probably in /etc/mpd.conf. Here's what you want to add: 
+  * make sure http output is enabled in your mpd conf. The system default for most debian-based distros is for mpd to run as the system user, so if you haven't configured mpd, it's probably in /etc/mpd.conf. Add the following: 
 
         audio_output {
         	type		"httpd"
@@ -62,10 +62,16 @@ Get started:
   * If your http streaming port is something other than 8000, for example, if it's 8001, you would change the 'sp' url variable, so your url would look like this instead:
 
         http://192.168.1.101:8888/play.htm?sp=8001
+        
+  * If your http streaming port is 8000, and your http port is the standard, which is port 80, and play.htm is in a folder named "albumart" in your www root, then your url would look like this:
+  
+        http://192.168.1.101/albumart/play.htm
 
-  * To play over ssh, install an ssh app and forward your http port and your http streaming port to localhost. If you decide to forward your http streaming to a port other than 8000, your url would look like this:
+  * To play over ssh, install an ssh app and forward your http port and your http streaming port to localhost. If you decide to forward your http port to 8888 and your http streaming to port 8001, your url would look like this:
 
         http://localhost:8888/play.htm?sp=8001
+        
+All that's left to do is play music on your mpd server. There are lots of apps to do that.
 
 That's it! Enjoy.
     
