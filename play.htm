@@ -88,7 +88,8 @@
           if (request.readyState === 4 && request.status == 200) {
             infoTxt = request.responseText;
             document.getElementById('songinfo').innerHTML = infoTxt;
-            document.getElementById('fresh').href = '#?' + 'epoch=' + t;
+            document.getElementById('songinfo').style.display = 'none';
+            document.getElementById('songinfo').style.display = 'block';
           }
         }
         request.open("GET", infoUrl, true);
@@ -103,7 +104,7 @@
     </script>
     <div id="info">
       <img src="cover.jpg" id="coverart"></img>
-      <a id="fresh" href="#"><h1 id="songinfo" itemprop="0"></h1></a>
+      <h1 id="songinfo"></h1>
     </div>
   </body>
 </html>
