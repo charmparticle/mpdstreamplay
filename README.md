@@ -1,16 +1,22 @@
-Introducing a way to play your mpd music from just about anywhere.
+**Introducing a way to play your mpd music from just about anywhere.**
 
 ![mobile firefox screenshot](screenshot.png "mobile screenshot on firefox")
 
-Features:
+*Features:*
 
   * Stream music from mpd http output to any device which supports html5
   * Display album art
   * Display song info
   * Works locally, on a LAN, or over an ssh connection
   * Able to toggle full-screen display. Simply touch the album art to toggle full-screen status.
+  
+**What to do if it is still displaying stale album art and song info:**
 
-Getting started:
+You almost certainly need to clear the cache. Unfortunately the only way to do that is from your browser. Typically this will be in advanced preferences, under privacy, and will be called "clear browsing data" or something similar. Make sure to only select cached content; you don't want to accidentally delete your browsing history.
+
+There are various addons for both firefox and chrome that can make clearing your cache a one-click affair, but for mobile devices, you're stuck with clearing it manually.
+
+**Getting started:**
 
   * make sure http output is enabled in your mpd conf. The system default for most debian-based distros is for mpd to run as the system user, so if you haven't configured mpd, it's probably in /etc/mpd.conf. Add the following: 
 
