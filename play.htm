@@ -8,16 +8,24 @@
 body {
     background-color: black;
 }
-     audio {
-         width: 100%; 
-     }
-     img {
-         image-rendering: high-quality;
-         position: center;
-         width: 300px; 
-         height: auto;
-     }
+audio {
+    width: 100%; 
+}
+img {
+    image-rendering: high-quality;
+    position: center;
+    width: 400px; 
+    height: auto;
+}
+@media screen and (max-width: 800px) {
+    img {
+        image-rendering: high-quality;
+        width: 100%; 
+        height: auto;
+    }
+}
 h1 {
+    margin-left: 10px;
     white-space: pre-wrap;
     font-weight:bold;
     font-family:sans-serif;
@@ -30,7 +38,27 @@ h1 {
     -moz-animation: Groove 42s ease infinite;
     animation: Groove 42s ease infinite;
 }
-
+@media screen and (min-width: 1000px) {
+    h1 {
+        position: fixed;
+        top:10px;
+        margin-left: 420px;
+        white-space: pre-wrap;
+        font-weight:bold;
+        font-family:sans-serif;
+        background: linear-gradient(to bottom, #cbddf2, #fcebd7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400% 400%;
+    
+        -webkit-animation: Groove 42s ease infinite;
+        -moz-animation: Groove 42s ease infinite;
+        animation: Groove 42s ease infinite;
+    }
+    audio {
+        width: 70%;
+    }
+}
 @-webkit-keyframes Groove {
     0%{background-position:17% 0%}
     50%{background-position:84% 100%}
