@@ -46,6 +46,11 @@ h1 {
     50%{background-position:84% 100%}
     100%{background-position:17% 0%}
 }
+     /*
+     h1 {
+         background-image: linear-gradient(to bottom, #cbddf2, #fcebd7);
+     }
+     */
 
         </style>
         <script type="text/javascript">
@@ -83,9 +88,6 @@ h1 {
                 var i = document.getElementById("info");
                 i.appendChild(audio);
             }
-            function reload(){
-                window.location.reload(true);
-            }
             function toggleFullScreen() {
                 var i = document.getElementById("coverart");
                 var m = document.getElementById("info");
@@ -101,14 +103,11 @@ h1 {
                 }
             }
             async function updateSongInfo(t) {
-                let res = await fetch(infoUrl);
+                let res = await fetch(infoUrl, {cache: "no-store"});
                 if(res.ok){
                     let infoTxt = await res.text();
                     epoch = Date.now();
                     document.getElementById('songinfo').innerHTML = infoTxt;
-                    document.getElementById('songinfo').style.display = 'none';
-                    document.getElementById('songinfo').style.display = 'block';
-                    document.getElementById('songinfo').setAttribute('itemprop', epoch);
                 }
             }
             function updateInfo(){
@@ -119,7 +118,6 @@ h1 {
             function refresh(){
                 setUrls();
                 document.getElementById('coverart').addEventListener("click", toggleFullScreen); 
-                //document.getElementById('songinfo').addEventListener("click", reload); 
                 setInterval("updateInfo();",1000);
             }
             window.onload = refresh;

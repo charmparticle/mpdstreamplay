@@ -9,12 +9,8 @@
   * Display song info
   * Works locally, on a LAN, or over an ssh connection
   * Able to toggle full-screen display. Simply touch the album art to toggle full-screen status.
-  
-**What to do if it is still displaying stale album art and song info:**
 
-You almost certainly need to clear the cache. Unfortunately the only way to do that is from your browser. Typically this will be in advanced preferences, under privacy, and will be called "clear browsing data" or something similar. Make sure to only select cached content; you don't want to accidentally delete your browsing history.
-
-There are various addons for both firefox and chrome that can make clearing your cache a one-click affair, but for mobile devices, you're stuck with clearing it manually.
+**Finally! I fixed the cache issue. Now it should always display the correct information.**
 
 **Getting started:**
 
