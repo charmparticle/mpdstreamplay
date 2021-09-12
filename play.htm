@@ -131,7 +131,7 @@ h1 {
                 }
             }
             async function updateSongInfo(t) {
-                let res = await fetch(infoUrl, {cache: "no-store"});
+                let res = await fetch(infoUrl, {cache: "reload"});
                 if(res.ok){
                     let infoTxt = await res.text();
                     epoch = Date.now();
@@ -146,7 +146,7 @@ h1 {
             function refresh(){
                 setUrls();
                 document.getElementById('coverart').addEventListener("click", toggleFullScreen); 
-                setInterval("updateInfo();",1000);
+                setInterval("updateInfo();",600);
             }
             window.onload = refresh;
         </script>

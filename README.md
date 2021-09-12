@@ -10,8 +10,6 @@
   * Works locally, on a LAN, or over an ssh connection
   * Able to toggle full-screen display. Simply touch the album art to toggle full-screen status.
 
-**Finally! I fixed the cache issue. Now it should always display the correct information.**
-
 **Getting started:**
 
   * make sure http output is enabled in your mpd conf. The system default for most debian-based distros is for mpd to run as the system user, so if you haven't configured mpd, it's probably in /etc/mpd.conf. Add the following: 
