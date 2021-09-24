@@ -83,15 +83,15 @@ That's it! Enjoy.
 
   * In the wwwroot, or whatever you prefer, add an index.htm file with the following:
 
-     <html>
-         <head>
+     \<html>
+         \<head>
              <title>MPD Radio</title>
-         </head>
-         <body>
+         \</head>
+         \<body>
              <audio controls="" preload="auto" src="http://localhost:8000">
              </audio>
-         </body>
-     </html>
+         \</body>
+     \</html>
 
   * Make sure to change port 8000 in the html to whatever you used for your http out.
     
