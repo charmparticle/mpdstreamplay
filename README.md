@@ -75,7 +75,7 @@ All that's left to do is play music on your mpd server. There are lots of apps t
 
 That's it! Enjoy.
 
-#If all you want to do is play music, and you don't care about the coverart or anything, here is an even easier solution:
+**If all you want to do is play music, and you don't care about the coverart or anything, here is an even easier solution:**
 
   * Enable http out in your mpd.conf, as above
 
