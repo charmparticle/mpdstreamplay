@@ -74,25 +74,3 @@
 All that's left to do is play music on your mpd server. There are lots of apps to do that.
 
 That's it! Enjoy.
-
-**If all you want to do is play music, and you don't care about the coverart or anything, here is an even easier solution:**
-
-  * Enable http out in your mpd.conf, as above
-
-  * Install apache or nginx or some other http server.
-
-  * In the wwwroot, or whatever you prefer, add an index.htm file with the following:
-
-     \<html>
-         \<head>
-             <title>MPD Radio</title>
-         \</head>
-         \<body>
-             <audio controls="" preload="auto" src="http://localhost:8000">
-             </audio>
-         \</body>
-     \</html>
-
-  * Make sure to change port 8000 in the html to whatever you used for your http out.
-    
-  * Now you can browse to the ip of your web browser, at whatever port it runs on, and whatever dir you installed the index.htm file on, and get streaming music.
